@@ -54,4 +54,12 @@ A C# WPF desktop application that simulates a conversational chatbot to educate 
 ---
 
 ## 🗂️ Folder Structure
-
+/Prog6221_POE/
+├── MainWindow.xaml
+├── MainWindow.xaml.cs
+├── ActivityLogWindow.xaml
+├── ActivityLogWindow.xaml.cs
+├── QuizWindow.xaml
+├── QuizWindow.xaml.cs
+├── UserTask.cs
+├── README.md
