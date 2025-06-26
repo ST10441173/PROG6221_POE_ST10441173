@@ -1,0 +1,53 @@
+﻿<Window x:Class="Prog6221_POE.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cybersecurity Awareness Chatbot" Height="700" Width="900">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
+            <TextBlock x:Name="ChatHistory" TextWrapping="Wrap" FontSize="14" />
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,0">
+            <TextBox x:Name="UserInput" Width="400" Height="30" FontSize="14" KeyDown="UserInput_KeyDown"/>
+            <Button Content="Send" Width="80" Height="30" Margin="10,0,0,0" Click="SendButton_Click"/>
+            <Button Content="🧠 Start Quiz" Width="100" Height="30" Margin="10,0,0,0" Click="StartQuiz_Click"/>
+            <Button Content="📜 View Log" Width="100" Height="30" Margin="10,0,0,0" Click="ViewLog_Click"/>
+        </StackPanel>
+
+        <Expander Header="🗂 Task Assistant" Grid.Row="2" Margin="0,10,0,0" IsExpanded="False">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,5">
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Task Title" />
+                        <TextBox x:Name="TaskTitle" Width="200" />
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Description" />
+                        <TextBox x:Name="TaskDescription" Width="300" />
+                    </StackPanel>
+
+                    <StackPanel Margin="5">
+                        <TextBlock Text="Reminder Date" />
+                        <DatePicker x:Name="TaskReminderDate" Width="150" />
+                    </StackPanel>
+
+                    <Button Content="Add Task" Click="AddTask_Click" Width="100" Height="40" Margin="5" VerticalAlignment="Bottom"/>
+                </StackPanel>
+
+                <ListBox x:Name="TaskList" Height="150" Margin="5" />
+
+                <StackPanel Orientation="Horizontal" Margin="5">
+                    <Button Content="Mark Complete" Click="CompleteTask_Click" Width="120" Margin="5"/>
+                    <Button Content="Delete Task" Click="DeleteTask_Click" Width="100" Margin="5"/>
+                </StackPanel>
+            </StackPanel>
+        </Expander>
+    </Grid>
+</Window>
